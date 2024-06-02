@@ -22,7 +22,9 @@ responder não, o programa irá devolver o somatório dos valores dos produtos.
 
 ## 2. Aplicação via API
 
-Para executar a aplicação, basta executar o comando: `python3 -m uvicorn t1:app`.
+Para executar a aplicação, é necessário ter os pacotes baixados via pip, para isso pode ser utilizado o comando: `pip install -r requirements.txt`.
+
+ Após isso, o seguinte comando para inicar a aplicação: `python3 -m uvicorn t1:app`.
 
 Essa segunda versão utiliza o FastAPI como dependência. Para representar o armazenamento em um banco de dados, foi criado de forma simplificada um arquivo chamado `filedb.json`, este por sua vez guarda as informações submetidas através do endpoint de insert. Além disso, o mesmo arquivo é utilizado para as consultas.
 
@@ -31,7 +33,7 @@ Existem dois endpoints configurados:
 1. `http://localhost:8000/set-product/{client_id}`: método: [POST],
 
      body exemplo: {
-    "name" : "aaaa",
+    "name" : "Tv",
     "qtd": 1,
     "price" : 2.5
 }
