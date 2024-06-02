@@ -1,4 +1,4 @@
-## Trabalho 1 / Desenvolvimento Backend-end / Pós-Graduação
+## Trabalho 1 / Desenvolvimento Back-end / Pós-Graduação
 
 -Edson Lemes da Silva   
 
