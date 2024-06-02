@@ -24,7 +24,7 @@ responder não, o programa irá devolver o somatório dos valores dos produtos.
 
 Para executar a aplicação, é necessário ter os pacotes baixados via pip, para isso pode ser utilizado o comando: `pip install -r requirements.txt`.
 
- Após isso, o seguinte comando para inicar a aplicação: `python3 -m uvicorn t1:app`.
+ Após isso, o seguinte comando para iniciar a aplicação: `python3 -m uvicorn t1:app`.
 
 Essa segunda versão utiliza o FastAPI como dependência. Para representar o armazenamento em um banco de dados, foi criado de forma simplificada um arquivo chamado `filedb.json`, este por sua vez guarda as informações submetidas através do endpoint de insert. Além disso, o mesmo arquivo é utilizado para as consultas.
 
