@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, Request
 import json
 from datetime import datetime
@@ -31,6 +32,7 @@ database = 'ctrlfile.json'
 def set_control_data(new_data):
 
     try:
+            
         with open(database, 'w+') as db:
             json.dump(new_data, db, indent=4)
     except ValueError as serverDebug:
@@ -85,7 +87,11 @@ async def save_data(data_to_save : Request):
     #atualiza o arquivo de controle
     set_control_data(ctrl_data)
 
-     #escreve no banco os dados atualizados
+    #cria diretório se não existir
+    if not os.path.exists('files'):
+        os.makedirs('files')
+        
+    #escreve no banco os dados atualizados
     with open('files/' + new_filename, 'w+') as f:
         json.dump(json_data, f, indent=4)
 
@@ -108,7 +114,7 @@ def get_next_data():
         return {'message': 'Sem arquivos na fila!'}
     
     next_file = ctrl_data['next']
-    
+
     try:
         #carrega o próximo arquivo da lista
         with open('files/' + next_file, 'r') as f:
