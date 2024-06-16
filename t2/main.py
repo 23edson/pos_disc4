@@ -108,14 +108,14 @@ def get_next_data():
         return {'message': 'Sem arquivos na fila!'}
     
     next_file = ctrl_data['next']
-
+    
     try:
         #carrega o próximo arquivo da lista
         with open('files/' + next_file, 'r') as f:
             data = json.load(f)
            
             #remove o primeiro arquivo da lista de controle (próximo)
-            ctrl_data['list'] = ctrl_data['list'][:-1]
+            ctrl_data['list'] = ctrl_data['list'][1:]
             #define se há um próximo
             ctrl_data['next'] = "" if len(ctrl_data['list']) == 0 else ctrl_data['list'][0]
             #adiciona o arquivo na lista de processados
